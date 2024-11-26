@@ -60,7 +60,8 @@ io.on("connection", (socket) => {
 
 
 // Inicia el servidor
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+const port = process.env.PORT || 3000; // Usar el puerto dinámico de Heroku
+server.listen(port, () => {
+  console.log(`Servidor escuchando en el puerto ${port}`);
 });
+
