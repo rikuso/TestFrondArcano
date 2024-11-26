@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego en Tiempo Real</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Barra de ataque y defensa -->
+    <div class="barra">
+      <button id="ataque-btn" class="boton-accion inactivo">ATAQUE</button>
+      <button id="defensa-btn" class="boton-accion inactivo">DEFENSA</button>
+    </div>
+
+    <!-- Mensaje de acción -->
+    <div id="mensaje-accion" class="mensaje">Selecciona un Personaje o Familiar</div>
+
+    <!-- Zona principal -->
+    <div class="zona-principal">
+      <!-- Armas (lado izquierdo) -->
+      <div class="armas">
+        <div class="arma">ARMA 1</div>
+        <div class="arma">ARMA 2</div>
+      </div>
+
+      <!-- Personaje y familiar (centro) -->
+      <div class="centro">
+        <!-- Selección del personaje -->
+        <div class="seleccion" id="personaje" data-nombre="Personaje">
+          <div class="personaje-carta">Personaje</div>
+          <div class="vida">600</div>
+        </div>
+
+        <!-- Selección del familiar -->
+        <div class="seleccion" id="familiar" data-nombre="Familiar">
+          <div class="familiar-carta">Familiar</div>
+          <div class="vida">600</div>
+        </div>
+      </div>
+
+      <!-- Habilidades (lado derecho) -->
+      <div class="habilidades">
+        <div class="habilidad">HABILIDAD 1</div>
+        <div class="habilidad">HABILIDAD 2</div>
+        <div class="habilidad espera">HABILIDAD ESPERA</div>
+      </div>
+    </div>
+
+    <!-- Historial de acciones -->
+    <div id="historial" class="historial">
+      <h3>Historial de Acciones</h3>
+      <ul id="lista-acciones"></ul>
+    </div>
+      <!-- ACCIONES PROPIAS -->
+    <div id="acciones-propias">
+      <h3>Tus acciones</h3>
+      <ul id="lista-acciones-propias"></ul>
+    </div>
+    <div id="acciones-oponente">
+      <h3>Acciones del oponente</h3>
+      <ul id="lista-acciones-oponente"></ul>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
